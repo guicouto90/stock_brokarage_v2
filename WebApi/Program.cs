@@ -1,3 +1,4 @@
+using Infrastructure.Data.Seeders;
 using Infrastructure.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,15 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var seeder = services.GetRequiredService<StockSeeder>();
+
+    // Run the seeder to populate the in-memory database
+    seeder.SeedData();
 }
 
 app.UseHttpsRedirection();
