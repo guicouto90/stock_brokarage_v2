@@ -38,7 +38,7 @@ namespace Application.UseCases.StockContext
                     output.AddErrorMessage($"Stock already registered");
                     return output;
                 }
-                var stock = new Stock(input.Name, input.Code);
+                var stock = new Stock(input.Name.ToUpper(), input.Code.ToUpper());
                 var history = new StockHistoryPrice(stock.Price);
                 stock.AddHistory(history);
                 await _stockRepository.CreateAsync(stock).ConfigureAwait(false);

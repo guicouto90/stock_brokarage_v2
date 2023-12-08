@@ -27,7 +27,7 @@ namespace Application.UseCases.AccountContext.Outputs
 
         public double? StockPrice
         {
-            get { return Math.Round(_stockPrice.GetValueOrDefault(), 2); }
+            get { return _stockPrice is not null ? Math.Round(_stockPrice.GetValueOrDefault(), 2) : null; }
             set { _stockPrice = value; }
         }
 

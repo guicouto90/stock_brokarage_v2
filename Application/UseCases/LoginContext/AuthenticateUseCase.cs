@@ -32,7 +32,7 @@ namespace Application.UseCases.LoginContext
             var output = new Output<LoginOutput>();
             try
             {
-                var result = await _customerRepository.GetByCpfAsync(input.CustomerCpf);
+                var result = await _customerRepository.GetByCpfAsync(input.CustomerCpf).ConfigureAwait(false);
                 if (result is null || !result.Account.VerifyPassword(input.Password))
                 {
                     _logger.LogError($"AuthenticateUseCase, Error: Cpf/password invalid");

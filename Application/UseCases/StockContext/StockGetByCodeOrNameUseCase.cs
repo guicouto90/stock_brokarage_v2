@@ -30,7 +30,7 @@ namespace Application.UseCases.StockContext
 
             try
             {
-                var stock = await _stockRepository.GetByCodeOrByNameAsync(input);
+                var stock = await _stockRepository.GetByCodeOrByNameAsync(input.ToUpper()).ConfigureAwait(false);
                 if (stock is null)
                 {
                     output.AddErrorMessage("Stock not found");

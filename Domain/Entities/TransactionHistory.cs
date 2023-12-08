@@ -25,6 +25,7 @@ namespace Domain.Entities
             TypeTransaction = typeTransaction;
             TransactionValue = transactionValue;
             Date = DateTime.Now;
+            StockPrice = null;
         }
 
         public TransactionHistory(TypeTransaction typeTransaction, double transactionValue, string stockCode, int stockQuantity, double stockPrice)

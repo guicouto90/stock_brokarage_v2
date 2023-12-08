@@ -17,12 +17,12 @@ namespace Infrastructure.Data.Seeders
             // Create and add seed data to the in-memory database
             var stocks = new List<Stock>
             {
-                new Stock("Petrobrás", "PETR4"),
-                new Stock("Vale", "VALE3"),
-                new Stock("Itau Unibanco", "ITUB4"),
-                new Stock("Bradesco ", "BBDC4"),
-                new Stock("Ambev", "ABEV3"),
-                new Stock("Banco do Brasil", "BBAS3"),
+                new Stock("PETROBRAS", "PETR4"),
+                new Stock("VALE", "VALE3"),
+                new Stock("ITAU", "ITUB4"),
+                new Stock("BRADESCO ", "BBDC4"),
+                new Stock("AMBEV", "ABEV3"),
+                new Stock("BANCO DO BRASIL", "BBAS3"),
                 new Stock("B3", "B3SA3"),
             };
 
